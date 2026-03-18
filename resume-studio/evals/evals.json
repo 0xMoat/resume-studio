@@ -1,0 +1,23 @@
+{
+  "skill_name": "resume-studio",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "这是我现有的英文简历 PDF，帮我把内容优化一下，方向是 Solana / Web3 全栈，然后做成一份好看但不要打开很卡的 A4 单页 PDF。请把中间的 HTML 源文件也保存下来。",
+      "expected_output": "The run should extract or reuse resume content, improve the copy, choose a design direction appropriate for a Solana / Web3 engineer, produce print-oriented HTML, and export a balanced single-page A4 PDF with no obvious bottom whitespace.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我有一个 JD，目标是 Staff Frontend Engineer。请把我现有简历按这个岗位重写成 ATS 友好的版本，同时再额外给我一份设计版 HTML + PDF，要求版面密度均衡，别像作品集海报。",
+      "expected_output": "The run should generate a role-tailored ATS version plus a designed resume artifact. It should analyze the JD, rewrite the summary and skills, and produce a one-page A4 HTML/PDF resume with balanced information density.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我不要花哨效果，但也不想要纯白 Word 风。基于我现有简历内容，做一份打开尽量快、文本可选中、结构清楚、视觉上有点 editorial 气质的 PDF。",
+      "expected_output": "The run should choose balanced PDF mode, avoid heavy visual effects, keep selectable text, produce a visually restrained editorial layout, and explicitly optimize for fast open behavior without dropping into a plain unattractive fallback.",
+      "files": []
+    }
+  ]
+}

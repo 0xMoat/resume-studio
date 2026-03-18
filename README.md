@@ -46,6 +46,6 @@ npx skills add https://github.com/0xMoat/resume-studio --skill resume-studio -g 
 
 ## Skill contents
 
-- `resume-studio/SKILL.md`
-- `resume-studio/README.md`
-- `resume-studio/evals/evals.json`
+- `skills/resume-studio/SKILL.md`
+- `skills/resume-studio/README.md`
+- `skills/resume-studio/evals/evals.json`

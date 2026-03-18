@@ -38,6 +38,8 @@ The skill treats resumes as both content and layout problems.
 
 It improves the words first, then chooses a design direction appropriate to the candidate, then builds a print-oriented A4 HTML resume before exporting PDF. When `frontend-design` is available, it is used to shape the visual direction without turning the resume into a landing page or poster.
 
+Its resume-content tailoring workflow is based on `tailored-resume-generator`, then extended with artifact-generation and PDF-quality rules specific to `resume-studio`.
+
 ## Packaging notes
 
 Core files:

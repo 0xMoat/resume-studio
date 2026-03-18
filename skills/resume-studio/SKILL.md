@@ -15,6 +15,8 @@ Upgrade resume work from "rewrite some bullets" to a complete resume pipeline:
 
 This skill is for both content and artifact generation. Do not stop at generic advice when the user clearly wants a finished resume.
 
+Content tailoring in this skill is adapted from `tailored-resume-generator` and extended for designed resume artifact generation.
+
 ## When to use this skill
 
 Use this skill when the user asks for any of the following:
@@ -45,7 +47,7 @@ Pick the output mode that matches the request. If the user does not specify, cho
 
 ## Core workflow
 
-### 1. Capture source material
+### 1. Gather source material
 
 Start from what the user already has:
 
@@ -54,11 +56,59 @@ Start from what the user already has:
 - Job description
 - Notes about target role, industry, geography, or seniority
 
-If facts are missing, ask only for high-risk gaps. Do not interrogate the user for minor polish decisions if a reasonable assumption is enough.
+If a job description exists, prefer getting the full posting plus company name and job title.
 
-### 2. Normalize and improve the resume content
+If the user already has a resume, use it as the foundation. If not, gather only the highest-value missing inputs:
 
-Turn the raw source into structured resume content first.
+- Work history with titles, companies, dates, and responsibilities
+- Education
+- Core skills and tools
+- Notable achievements, metrics, or scope
+- Certifications, awards, publications, or links when relevant
+
+Ask only for high-risk gaps. Do not interrogate the user for minor polish decisions if a reasonable assumption is enough.
+
+### 2. Analyze job requirements
+
+If a job description is provided, classify requirements:
+
+| Priority | Meaning |
+|----------|---------|
+| P1 | Must-have qualifications, deal-breakers, and keywords that must appear |
+| P2 | Strongly preferred skills, adjacent experience, and important competencies |
+| P3 | Bonus signals, culture alignment, and nice-to-have tools |
+
+Explicitly extract:
+
+- Must-have qualifications such as years of experience, required skills, and education
+- Key technical skills, tools, and methodologies
+- Soft skills such as communication, leadership, or collaboration
+- Industry knowledge or domain experience
+- Repeated keywords and phrases for ATS
+- Company values, tone, or culture signals
+
+If no job description exists, infer a target direction from the user's background and stated goal.
+
+### 3. Map candidate experience to requirements
+
+For each important requirement:
+
+- Identify matching experience from the candidate's background
+- Use transferable skills if there is no direct match
+- Note gaps that should be de-emphasized, reframed, or addressed in recommendations
+- Identify unique strengths that deserve top placement
+
+Use this mapping to:
+
+- Re-rank the summary
+- Reorder skills
+- Choose which projects and bullets deserve top placement
+- Inject exact terminology naturally for ATS
+- Decide what to omit, compress, or move down
+
+### 4. Structure the tailored resume content
+
+Turn the raw source into structured resume content before designing.
 
 Always extract or produce these sections where applicable:
 
@@ -83,32 +133,67 @@ For experience bullets, prefer:
 
 `[Action] + [What] + [How] + [Result or value]`
 
-### 3. Analyze the target
+Optional sections when they materially help:
 
-If a job description is provided, classify requirements:
+- Certifications and licenses
+- Awards or recognition
+- Publications or speaking
+- Volunteer work relevant to the role
+- Additional links such as GitHub, portfolio, or case studies
 
-| Priority | Meaning |
-|----------|---------|
-| P1 | Must-have qualifications, deal-breakers, keywords that must appear |
-| P2 | Strongly preferred skills and adjacent experience |
-| P3 | Bonus signals, style/culture alignment, nice-to-have tools |
+### 5. Optimize for ATS and recruiter scanability
 
-Explicitly extract:
+Keep the content machine-readable and recruiter-readable at the same time.
 
-- Required skills and tools
-- Years-of-experience expectations
-- Education requirements
-- Soft skills
-- Company values, tone, or culture signals
+Prefer:
 
-Use this to:
+- Standard section headings
+- Exact target-role terminology used naturally
+- Both acronym and full-form terminology where relevant
+- Straightforward chronology and consistent labels
+- Skills that can be substantiated by the candidate's actual experience
 
-- Re-rank the summary
-- Reorder skills
-- Choose which projects and bullets deserve top placement
-- Inject exact terminology naturally for ATS
+Avoid:
 
-If no job description exists, infer a target direction from the user's background and stated goal.
+- Keyword stuffing
+- Decorative formatting that breaks parsing
+- Unsupported claims added only to satisfy a posting
+- Overly creative section names in ATS-oriented variants
+
+### 6. Format and present
+
+For content-only delivery, default to markdown unless the user requests plain text or another format.
+
+Use these formatting rules:
+
+- Keep to one page for candidates with under 10 years of experience unless the user clearly needs more
+- Two pages can be appropriate for more senior profiles when the content truly justifies it
+- Use reverse chronological order unless a career-change case clearly benefits from a hybrid structure
+- Keep contact information prominent
+- Maintain a clean, scannable layout with white space and consistent spacing
+
+If the user wants a designed artifact, continue into the HTML and PDF workflow below rather than stopping at text.
+
+### 7. Provide strategic recommendations
+
+After delivering the tailored resume, provide brief high-value follow-through when useful:
+
+- Strengths analysis: what makes the candidate competitive for this role
+- Gap analysis: what requirements are not fully met and how to address them honestly
+- Interview preparation: talking points and stories suggested by the revised resume
+- Cover letter hooks: 2 to 3 angles or opening lines worth expanding
+
+Keep this concise when the user mainly wants a finished artifact, but do not omit important gaps or risks.
+
+### 8. Iterate and refine
+
+Offer refinement paths when they materially help:
+
+- Adjust emphasis or tone
+- Add or remove sections
+- Generate alternative versions for different roles
+- Produce ATS and designed variants from the same source
+- Create more conservative or more modern visual versions when a designed output is requested
 
 ## Content standards
 
@@ -148,6 +233,8 @@ Lead with the highest-signal items.
 - Avoid bullets that only describe responsibility without value
 - Do not fabricate metrics
 - If metrics are unavailable, express scope or effect clearly
+- Reorder bullets within a role to emphasize the best target-role matches
+- Highlight outcomes, scale, ownership, and tools used
 
 ### Truthfulness
 
@@ -169,11 +256,25 @@ Adapt the resume strategy to the candidate, not just the job description.
 - Highlight leadership, initiative, and hands-on work
 - Avoid padding the resume with weak filler experience
 
+#### Senior executives
+
+- Lead with an executive summary
+- Focus on strategic scope, leadership, growth, and organizational impact
+- Include board, speaking, or public credibility signals when they matter
+- Emphasize revenue, hiring, operational scale, and transformation outcomes
+
 #### Technical roles
 
 - Keep technical skills prominent
 - Include GitHub, portfolio, or equivalent links when relevant and available
 - Mention engineering practices or methodologies such as Agile when they help the fit
+
+#### Creative roles
+
+- Include portfolio links prominently
+- Highlight campaigns, shipped creative work, or client outcomes
+- Mention relevant tools and software proficiencies
+- Allow a slightly more expressive designed layout while preserving ATS readability when needed
 
 ### Length and personal-information rules
 
@@ -390,4 +491,4 @@ Do not:
 - Treat resume design like a landing page or poster
 - Overdecorate at the expense of scanability
 - Fabricate credentials or impact
-- Lose the original `resume-generator` content rigor just because the skill can now produce designed artifacts
+- Lose the adapted `tailored-resume-generator` content rigor just because the skill can now produce designed artifacts

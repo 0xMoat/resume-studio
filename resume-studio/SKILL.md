@@ -93,6 +93,14 @@ If a job description is provided, classify requirements:
 | P2 | Strongly preferred skills and adjacent experience |
 | P3 | Bonus signals, style/culture alignment, nice-to-have tools |
 
+Explicitly extract:
+
+- Required skills and tools
+- Years-of-experience expectations
+- Education requirements
+- Soft skills
+- Company values, tone, or culture signals
+
 Use this to:
 
 - Re-rank the summary
@@ -124,6 +132,11 @@ Group skills into clear categories. Good categories:
 - Web3 / Solana
 - Infrastructure / Tools
 
+When a job description exists:
+
+- Put required tools and core technologies first
+- Use the exact terminology used in the job description where truthful
+
 Do not dump every keyword into one line. Keep groups scannable.
 
 ### Experience and projects
@@ -139,6 +152,36 @@ Lead with the highest-signal items.
 ### Truthfulness
 
 Never fabricate experience, titles, metrics, timelines, or shipped work.
+
+### Career stage and candidate type adjustments
+
+Adapt the resume strategy to the candidate, not just the job description.
+
+#### Career changers
+
+- Emphasize transferable skills
+- Build a narrative that explains the transition clearly
+- Use projects and adjacent experience to bridge credibility gaps
+
+#### Recent graduates
+
+- Lead more strongly with education, projects, internships, and relevant coursework
+- Highlight leadership, initiative, and hands-on work
+- Avoid padding the resume with weak filler experience
+
+#### Technical roles
+
+- Keep technical skills prominent
+- Include GitHub, portfolio, or equivalent links when relevant and available
+- Mention engineering practices or methodologies such as Agile when they help the fit
+
+### Length and personal-information rules
+
+- Prefer one page for candidates with under 10 years of experience unless the user clearly needs more
+- Two pages can be appropriate for more senior profiles when the content truly justifies it
+- Avoid first-person pronouns
+- Do not include age, photo, marital status, or similar personal details unless explicitly required for a specific market and the user asks for it
+- Do not list every historical role if it weakens relevance; compress or omit low-signal older experience when appropriate
 
 ## Designed artifact workflow
 
@@ -210,6 +253,26 @@ The balanced PDF is the default designed output. It should look polished but ope
 
 These often create PDF resources that render slowly or appear blurry for a moment on open.
 
+## ATS optimization rules
+
+When producing ATS-friendly output, keep the content machine-readable and recruiter-readable at the same time.
+
+Prefer:
+
+- Standard section headings such as `Professional Summary`, `Skills`, `Experience`, `Projects`, and `Education`
+- Exact keywords from the target role used naturally
+- Both acronym and full-form terminology where relevant, such as `LLM (large language model)` or `CI/CD (continuous integration and continuous delivery)`
+- Simple bullet structures and straightforward chronology
+
+Avoid:
+
+- Tables for primary resume content
+- Icon-only labels for critical information
+- Graphics or layout tricks that interfere with parsing
+- Complex formatting that makes field extraction unreliable
+
+If the deliverable is a designed PDF, preserve ATS readability by keeping the text selectable and the reading order clear.
+
 ## Page density and whitespace control
 
 The resume should feel intentionally filled, not cramped and not sparse.
@@ -271,6 +334,34 @@ Typical outputs:
 
 This makes later tailoring much faster.
 
+## Content-only resume template
+
+When the user asks for a text or markdown resume, this structure is the default:
+
+```markdown
+# CANDIDATE NAME
+Email | Phone | LinkedIn | Portfolio
+
+## PROFESSIONAL SUMMARY
+[2-4 lines aligned to the target role]
+
+## SKILLS
+- **Category**: Skill 1, Skill 2, Skill 3
+
+## EXPERIENCE
+**Title** | Company | Dates
+- Achievement / impact bullet
+
+## PROJECTS
+**Project** | Context | Dates
+- Relevant implementation or result
+
+## EDUCATION
+**Degree** | School | Year
+```
+
+Keep this structure simple unless the user requests another format.
+
 ## Report structure
 
 When returning the final result to the user, summarize briefly:
@@ -290,6 +381,7 @@ Do:
 - Use `frontend-design` for resume-specific HTML decisions when a designed artifact is needed
 - Keep the PDF single-page A4 unless the user clearly wants otherwise
 - Tune layout density so the page feels complete without obvious bottom voids
+- Keep ATS, recruiter readability, and visual polish aligned rather than treating them as separate problems
 
 Do not:
 
@@ -298,3 +390,4 @@ Do not:
 - Treat resume design like a landing page or poster
 - Overdecorate at the expense of scanability
 - Fabricate credentials or impact
+- Lose the original `resume-generator` content rigor just because the skill can now produce designed artifacts

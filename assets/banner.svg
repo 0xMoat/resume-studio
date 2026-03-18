@@ -1,0 +1,98 @@
+<svg width="1400" height="720" viewBox="0 0 1400 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Resume Studio banner</title>
+  <desc id="desc">Design-aware resume rewriting and A4 HTML/PDF generation skill banner</desc>
+  <defs>
+    <linearGradient id="bg" x1="140" y1="48" x2="1260" y2="672" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF6EE"/>
+      <stop offset="1" stop-color="#F1E6D7"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="935" y1="110" x2="1138" y2="582" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDFC"/>
+      <stop offset="1" stop-color="#F8F1E7"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="960" y1="72" x2="1225" y2="318" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D98457" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#D98457" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="860" y="72" width="398" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#412513" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="720" rx="36" fill="#DDD0BF"/>
+  <rect x="34" y="34" width="1332" height="652" rx="28" fill="url(#bg)"/>
+  <circle cx="1150" cy="132" r="180" fill="url(#accentGlow)"/>
+  <circle cx="252" cy="596" r="152" fill="#F6EFE4"/>
+
+  <rect x="96" y="92" width="8" height="188" rx="4" fill="#B86136"/>
+  <text x="132" y="148" fill="#182230" font-family="Helvetica, Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="-2.4">
+    Resume Studio
+  </text>
+  <text x="132" y="196" fill="#B86136" font-family="Helvetica, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="6">
+    DESIGN-AWARE RESUME SKILL
+  </text>
+  <text x="132" y="274" fill="#314156" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700">
+    Tailor, rewrite, and design single-page
+  </text>
+  <text x="132" y="320" fill="#314156" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700">
+    A4 resumes as balanced HTML and PDF
+  </text>
+  <text x="132" y="382" fill="#5E6A78" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="400">
+    Built for users who want a finished resume deliverable,
+  </text>
+  <text x="132" y="415" fill="#5E6A78" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="400">
+    not just generic bullet edits.
+  </text>
+
+  <g transform="translate(132 470)">
+    <rect width="164" height="48" rx="24" fill="#F5E6DA"/>
+    <text x="82" y="31" text-anchor="middle" fill="#A5512A" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="700">ATS-ready</text>
+    <rect x="178" width="190" height="48" rx="24" fill="#FAF4EB"/>
+    <text x="273" y="31" text-anchor="middle" fill="#314156" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="700">HTML source</text>
+    <rect x="382" width="206" height="48" rx="24" fill="#F5E6DA"/>
+    <text x="485" y="31" text-anchor="middle" fill="#A5512A" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="700">Balanced PDF</text>
+    <rect x="602" width="214" height="48" rx="24" fill="#FAF4EB"/>
+    <text x="709" y="31" text-anchor="middle" fill="#314156" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="700">Fast-open option</text>
+  </g>
+
+  <text x="132" y="616" fill="#7B8793" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3.2">
+    RESUME COPY + A4 LAYOUT + RENDER-BALANCED EXPORT
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect x="904" y="94" width="310" height="500" rx="22" fill="url(#paper)"/>
+  </g>
+  <rect x="938" y="136" width="242" height="6" rx="3" fill="#D7DEE6"/>
+  <rect x="938" y="153" width="164" height="20" rx="10" fill="#1B2737"/>
+  <rect x="938" y="184" width="132" height="11" rx="5.5" fill="#C76737"/>
+  <rect x="938" y="212" width="205" height="11" rx="5.5" fill="#4B5A6C"/>
+
+  <text x="938" y="258" fill="#8B96A3" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2.5">SUMMARY</text>
+  <rect x="970" y="275" width="4" height="68" rx="2" fill="#C76737"/>
+  <rect x="990" y="279" width="160" height="8" rx="4" fill="#59687A"/>
+  <rect x="990" y="294" width="144" height="8" rx="4" fill="#59687A"/>
+  <rect x="990" y="309" width="149" height="8" rx="4" fill="#59687A"/>
+  <rect x="990" y="324" width="132" height="8" rx="4" fill="#59687A"/>
+
+  <text x="938" y="382" fill="#8B96A3" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2.5">SKILLS</text>
+  <rect x="938" y="398" width="108" height="46" rx="10" fill="#F6E9DE"/>
+  <rect x="1054" y="398" width="126" height="46" rx="10" fill="#F9F3EB"/>
+  <rect x="938" y="452" width="118" height="46" rx="10" fill="#F9F3EB"/>
+  <rect x="1064" y="452" width="116" height="46" rx="10" fill="#F6E9DE"/>
+  <rect x="950" y="412" width="46" height="8" rx="4" fill="#A5512A"/>
+  <rect x="950" y="426" width="79" height="6" rx="3" fill="#6D7A88"/>
+  <rect x="1066" y="412" width="58" height="8" rx="4" fill="#324156"/>
+  <rect x="1066" y="426" width="96" height="6" rx="3" fill="#6D7A88"/>
+  <rect x="950" y="466" width="62" height="8" rx="4" fill="#324156"/>
+  <rect x="950" y="480" width="92" height="6" rx="3" fill="#6D7A88"/>
+  <rect x="1076" y="466" width="44" height="8" rx="4" fill="#A5512A"/>
+  <rect x="1076" y="480" width="74" height="6" rx="3" fill="#6D7A88"/>
+
+  <text x="938" y="536" fill="#8B96A3" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2.5">EXPERIENCE</text>
+  <rect x="970" y="552" width="2" height="58" rx="1" fill="#D8DEE6"/>
+  <rect x="984" y="556" width="126" height="8" rx="4" fill="#1B2737"/>
+  <rect x="1122" y="556" width="58" height="8" rx="4" fill="#C76737"/>
+  <rect x="984" y="573" width="104" height="6" rx="3" fill="#6D7A88"/>
+  <rect x="984" y="590" width="174" height="6" rx="3" fill="#6D7A88"/>
+  <rect x="984" y="603" width="158" height="6" rx="3" fill="#6D7A88"/>
+</svg>

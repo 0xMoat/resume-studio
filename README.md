@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.svg" alt="Resume Studio banner" width="1200" />
+</p>
+
 # Resume Studio
 
 Design-aware resume rewriting and PDF generation for agent workflows.

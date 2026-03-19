@@ -36,7 +36,7 @@ Typical prompts:
 
 The skill treats resumes as both content and layout problems.
 
-It improves the words first, then chooses a design direction appropriate to the candidate, then builds a print-oriented A4 HTML resume before exporting PDF. When `frontend-design` is available, it is used to shape the visual direction without turning the resume into a landing page or poster.
+It improves the words first, then chooses a design direction appropriate to the candidate, then builds a print-oriented A4 HTML resume before exporting PDF. It bundles the full `frontend-design` guidance locally so the design workflow remains self-contained and does not depend on a separately installed skill.
 
 Its resume-content tailoring workflow is based on `tailored-resume-generator`, then extended with artifact-generation and PDF-quality rules specific to `resume-studio`.
 
@@ -45,6 +45,8 @@ Its resume-content tailoring workflow is based on `tailored-resume-generator`, t
 Core files:
 
 - `SKILL.md`
+- `references/frontend-design/SKILL.md`
+- `references/frontend-design/reference/*.md`
 - `evals/evals.json`
 
 This skill is intended for public distribution on `skills.sh`, so the trigger description is intentionally broad enough to catch resume rewriting, resume design, and resume PDF generation tasks.

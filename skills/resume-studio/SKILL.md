@@ -119,6 +119,14 @@ Always extract or produce these sections where applicable:
 - Projects
 - Education
 
+Optional sections when they materially help:
+
+- Certifications and licenses
+- Awards or recognition
+- Publications or speaking
+- Volunteer work relevant to the role
+- Additional links such as GitHub, portfolio, or case studies
+
 Improve the copy before designing:
 
 - Clarify role scope and value
@@ -132,14 +140,6 @@ Improve the copy before designing:
 For experience bullets, prefer:
 
 `[Action] + [What] + [How] + [Result or value]`
-
-Optional sections when they materially help:
-
-- Certifications and licenses
-- Awards or recognition
-- Publications or speaking
-- Volunteer work relevant to the role
-- Additional links such as GitHub, portfolio, or case studies
 
 ### 5. Optimize for ATS and recruiter scanability
 
@@ -290,16 +290,31 @@ When the user wants a designed resume artifact, do not directly jump from raw te
 
 1. Improve the resume content.
 2. Decide the design direction from the content itself.
-3. Consult `frontend-design` if available.
-4. Create HTML first.
-5. Export PDF from the HTML.
-6. Validate visual balance and rendering behavior.
+3. Read the bundled frontend-design guidance at `references/frontend-design/SKILL.md`.
+4. Load only the relevant frontend-design reference files for the task.
+5. Create HTML first.
+6. Export PDF from the HTML.
+7. Validate visual balance and rendering behavior.
 
-## How to use `frontend-design`
+## Bundled frontend-design guidance
 
-If `frontend-design` is available and the user wants a designed resume, explicitly use it.
+`resume-studio` includes a vendored copy of the full `frontend-design` skill under `references/frontend-design/`, so users do not need to pre-install `frontend-design` separately.
 
-Use it to answer:
+When the user wants a designed resume artifact, always read:
+
+- `references/frontend-design/SKILL.md`
+
+Then consult only the reference files needed for the current design problem:
+
+- `references/frontend-design/reference/typography.md` for type scale, pairing, measure, and loading
+- `references/frontend-design/reference/color-and-contrast.md` for OKLCH palettes, tinted neutrals, contrast, and theming
+- `references/frontend-design/reference/spatial-design.md` for layout rhythm, spacing, alignment, and composition
+- `references/frontend-design/reference/motion-design.md` for transitions, sequencing, and reduced-motion choices
+- `references/frontend-design/reference/interaction-design.md` for states, affordances, disclosure, and controls
+- `references/frontend-design/reference/responsive-design.md` for adaptation across viewport sizes and container contexts
+- `references/frontend-design/reference/ux-writing.md` for labels, microcopy, empty states, and clarity
+
+Use this bundled guidance to answer:
 
 - What visual tone fits this candidate?
 - What typography direction matches the candidate's field?
@@ -479,7 +494,7 @@ Do:
 - Use this skill for full resume artifact generation, not only text cleanup
 - Improve the writing before designing
 - Let the candidate's profile drive the visual direction
-- Use `frontend-design` for resume-specific HTML decisions when a designed artifact is needed
+- Use the bundled `references/frontend-design/` guidance for resume-specific HTML decisions when a designed artifact is needed
 - Keep the PDF single-page A4 unless the user clearly wants otherwise
 - Tune layout density so the page feels complete without obvious bottom voids
 - Keep ATS, recruiter readability, and visual polish aligned rather than treating them as separate problems

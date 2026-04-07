@@ -45,8 +45,7 @@ Its resume-content tailoring workflow is based on `tailored-resume-generator`, t
 Core files:
 
 - `SKILL.md`
-- `references/frontend-design/SKILL.md`
-- `references/frontend-design/reference/*.md`
+- `references/resume-design.md`
 - `evals/evals.json`
 
 This skill is intended for public distribution on `skills.sh`, so the trigger description is intentionally broad enough to catch resume rewriting, resume design, and resume PDF generation tasks.

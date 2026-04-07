@@ -9,13 +9,13 @@ Upgrade resume work from "rewrite some bullets" to a complete resume pipeline:
 
 1. Understand and improve the content.
 2. Align it to the target job or target direction.
-3. If a designed artifact is requested, consult `frontend-design` and create a resume-specific HTML layout.
+3. If a designed artifact is requested, consult the design reference and create a resume-specific HTML layout.
 4. Export a render-balanced A4 single-page PDF.
 5. Validate density, page count, and readability before handing it back.
 
 This skill is for both content and artifact generation. Do not stop at generic advice when the user clearly wants a finished resume.
 
-Content tailoring in this skill is adapted from `tailored-resume-generator` and extended for designed resume artifact generation.
+Content tailoring adapted from `tailored-resume-generator`, design guidance adapted from Anthropic's `frontend-design` skill (Apache 2.0).
 
 ## When to use this skill
 
@@ -290,38 +290,21 @@ When the user wants a designed resume artifact, do not directly jump from raw te
 
 1. Improve the resume content.
 2. Decide the design direction from the content itself.
-3. Read the bundled frontend-design guidance at `references/frontend-design/SKILL.md`.
-4. Load only the relevant frontend-design reference files for the task.
-5. Create HTML first.
-6. Export PDF from the HTML.
-7. Validate visual balance and rendering behavior.
+3. Read the design reference at `references/resume-design.md`.
+4. Create HTML first.
+5. Export PDF from the HTML.
+6. Validate visual balance and rendering behavior.
 
-## Bundled frontend-design guidance
+## Design reference
 
-`resume-studio` includes a vendored copy of the full `frontend-design` skill under `references/frontend-design/`, so users do not need to pre-install `frontend-design` separately.
+`resume-studio` includes a consolidated design reference at `references/resume-design.md`, adapted from Anthropic's `frontend-design` skill (Apache 2.0) and scoped to print-oriented resume layout.
 
-When the user wants a designed resume artifact, always read:
-
-- `references/frontend-design/SKILL.md`
-
-Then consult only the reference files needed for the current design problem:
-
-- `references/frontend-design/reference/typography.md` for type scale, pairing, measure, and loading
-- `references/frontend-design/reference/color-and-contrast.md` for OKLCH palettes, tinted neutrals, contrast, and theming
-- `references/frontend-design/reference/spatial-design.md` for layout rhythm, spacing, alignment, and composition
-- `references/frontend-design/reference/motion-design.md` for transitions, sequencing, and reduced-motion choices
-- `references/frontend-design/reference/interaction-design.md` for states, affordances, disclosure, and controls
-- `references/frontend-design/reference/responsive-design.md` for adaptation across viewport sizes and container contexts
-- `references/frontend-design/reference/ux-writing.md` for labels, microcopy, empty states, and clarity
-
-Use this bundled guidance to answer:
+When the user wants a designed resume artifact, read `references/resume-design.md` to answer:
 
 - What visual tone fits this candidate?
 - What typography direction matches the candidate's field?
 - Should the layout feel editorial, refined technical, minimal professional, or portfolio-adjacent?
 - How can the design feel intentional without becoming heavy or gimmicky?
-
-Resume-specific rule:
 
 Do not blindly apply flashy product-landing-page aesthetics. Resume design must remain scannable, printable, and recruiter-friendly.
 
@@ -494,7 +477,7 @@ Do:
 - Use this skill for full resume artifact generation, not only text cleanup
 - Improve the writing before designing
 - Let the candidate's profile drive the visual direction
-- Use the bundled `references/frontend-design/` guidance for resume-specific HTML decisions when a designed artifact is needed
+- Use `references/resume-design.md` for resume-specific HTML design decisions when a designed artifact is needed
 - Keep the PDF single-page A4 unless the user clearly wants otherwise
 - Tune layout density so the page feels complete without obvious bottom voids
 - Keep ATS, recruiter readability, and visual polish aligned rather than treating them as separate problems

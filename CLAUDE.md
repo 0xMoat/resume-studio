@@ -14,9 +14,7 @@ Distribution: `npx skills add https://github.com/0xMoat/resume-studio --skill re
 skills/resume-studio/
 ├── SKILL.md                        # Primary skill definition (source of truth)
 ├── README.md                       # Installation and usage guide
-├── evals/evals.json                # 3 evaluation prompts (Chinese)
-└── references/
-    └── resume-design.md            # Typography, color, spatial design for resume PDF
+└── evals/evals.json                # 3 evaluation prompts (Chinese)
 ```
 
 ## How the skill works
@@ -37,7 +35,7 @@ Four output modes: `ATS`, `Balanced PDF` (default designed), `Fast-open PDF`, `C
 ## Key design decisions
 
 - **Content before design**: Always improve the resume copy before touching layout.
-- **Consolidated design reference**: `references/resume-design.md` contains typography, color, and spatial design guidance scoped to resume PDF. Adapted from Anthropic's frontend-design skill (Apache 2.0).
+- **Inline design guidelines**: Typography, color, and spatial design guidance is embedded directly in SKILL.md (adapted from Anthropic's frontend-design skill, Apache 2.0).
 - **Resume ≠ landing page**: Designed resumes must stay scannable, printable, recruiter-friendly. No glassmorphism, no full-page overlays, no heavy gradients.
 - **Balanced PDF defaults**: 1 type family, 2–3 weights, 2–3 accent colors, simple borders/flat fills. Avoid `mask-image`, blur, transparency layers.
 - **Single-page A4**: Default target. Two pages only for senior profiles with justification.
@@ -48,7 +46,7 @@ Four output modes: `ATS`, `Balanced PDF` (default designed), `Fast-open PDF`, `C
 - `SKILL.md` is the authoritative skill definition. All workflow, content standards, and design rules live here.
 - When modifying the skill workflow, keep the 8-step pipeline structure intact.
 - Evals are in Chinese — maintain this convention.
-- `references/resume-design.md` is a standalone reference adapted from upstream; update it directly as needed.
+- Design guidelines are inline in SKILL.md under "Design guidelines" — update them directly as needed.
 
 ## Commits
 

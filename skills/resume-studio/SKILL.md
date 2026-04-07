@@ -290,23 +290,79 @@ When the user wants a designed resume artifact, do not directly jump from raw te
 
 1. Improve the resume content.
 2. Decide the design direction from the content itself.
-3. Read the design reference at `references/resume-design.md`.
-4. Create HTML first.
-5. Export PDF from the HTML.
-6. Validate visual balance and rendering behavior.
+3. Create HTML using the design guidelines below.
+4. Export PDF from the HTML.
+5. Validate visual balance and rendering behavior.
 
-## Design reference
+## Design guidelines
 
-`resume-studio` includes a consolidated design reference at `references/resume-design.md`, adapted from Anthropic's `frontend-design` skill (Apache 2.0) and scoped to print-oriented resume layout.
-
-When the user wants a designed resume artifact, read `references/resume-design.md` to answer:
-
-- What visual tone fits this candidate?
-- What typography direction matches the candidate's field?
-- Should the layout feel editorial, refined technical, minimal professional, or portfolio-adjacent?
-- How can the design feel intentional without becoming heavy or gimmicky?
+> Adapted from Anthropic's frontend-design skill (Apache 2.0), scoped to print-oriented resume layout.
 
 Do not blindly apply flashy product-landing-page aesthetics. Resume design must remain scannable, printable, and recruiter-friendly.
+
+### Design direction
+
+Commit to a clear aesthetic direction before writing CSS:
+
+- What visual tone fits this candidate's field? (editorial for marketing, refined technical for engineering, minimal professional for finance, portfolio-adjacent for creative)
+- Should the layout feel restrained or expressive?
+- What's the one design choice that makes this resume feel intentional, not templated?
+
+Bold maximalism and refined minimalism both work — the key is intentionality, not intensity.
+
+### The AI slop test
+
+If someone saw this resume and immediately thought "AI made this," redesign it. Avoid:
+
+- Overused fonts (Inter, Roboto, Arial, Open Sans)
+- Cyan-on-dark, purple-to-blue gradients, neon accents
+- Glassmorphism, blur effects, excessive shadows
+- Gradient text on headings
+- Identical card grids with icon + heading + text
+
+### Typography
+
+Use fewer sizes with more contrast. A resume needs 4–5 sizes:
+
+| Role | Use Case |
+|------|----------|
+| xs (0.75rem) | Dates, metadata, secondary labels |
+| sm (0.875rem) | Skills, project details |
+| base (1rem) | Body text, bullet points |
+| lg (1.25–1.5rem) | Section headings |
+| xl (1.5–2rem) | Name / title |
+
+Pick a consistent ratio (1.25 major third or 1.333 perfect fourth) and commit. Combine size, weight, and color for hierarchy — don't rely on size alone.
+
+Font selection — avoid invisible defaults: Inter, Roboto, Open Sans, Lato, Montserrat. Better Google Fonts: **Instrument Sans**, **Plus Jakarta Sans**, **Outfit**, **Onest**, **Figtree**, **DM Sans** (sans-serif); **Fraunces**, **Newsreader**, **Lora** (editorial / premium). System fonts (`-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui`) are also fine when performance matters more than personality.
+
+One font family in multiple weights often beats two competing typefaces. Only add a second font for genuine contrast (e.g., serif display + sans body). Never pair fonts that are similar but not identical.
+
+Line-height should be the base unit for vertical spacing. If body text has `line-height: 1.5` on 16px (= 24px), spacing values should be multiples of 24px. Use `rem` / `em` for font sizes, minimum 16px body text. Use `font-variant-numeric: tabular-nums` for aligned numbers.
+
+### Color
+
+Use OKLCH — perceptually uniform, unlike HSL:
+
+```css
+--color-primary: oklch(60% 0.15 250);
+--color-primary-light: oklch(85% 0.08 250);
+--color-primary-dark: oklch(35% 0.12 250);
+```
+
+As you move toward white or black, reduce chroma. Tint your neutrals toward your accent hue (chroma ~0.01) for subconscious cohesion — pure gray has no personality.
+
+The 60-30-10 rule: 60% neutral backgrounds, 30% text and borders, 10% accent (section markers, name, key highlights). Accent colors work because they're rare.
+
+Contrast: body text needs 4.5:1, large text 3:1 (WCAG AA). Avoid pure black (`#000`) or pure white (`#fff`) — always tint slightly.
+
+### Spatial design
+
+Use 4pt spacing base: 4, 8, 12, 16, 24, 32, 48, 64px.
+
+The squint test: blur your eyes at the resume — can you identify the name, section headings, and content groupings? If everything looks the same weight, the hierarchy is broken. Combine 2–3 dimensions (size, weight, color, space) for strong hierarchy.
+
+Create visual rhythm through varied spacing — tight groupings within sections, generous separations between sections. The resume should feel intentionally composed, not uniformly spaced. Optical adjustments: text at `margin-left: 0` looks indented due to letterform whitespace — use negative margin (`-0.05em`) to optically align.
 
 ## HTML resume rules
 
@@ -477,7 +533,7 @@ Do:
 - Use this skill for full resume artifact generation, not only text cleanup
 - Improve the writing before designing
 - Let the candidate's profile drive the visual direction
-- Use `references/resume-design.md` for resume-specific HTML design decisions when a designed artifact is needed
+- Use the inline design guidelines for resume-specific HTML design decisions when a designed artifact is needed
 - Keep the PDF single-page A4 unless the user clearly wants otherwise
 - Tune layout density so the page feels complete without obvious bottom voids
 - Keep ATS, recruiter readability, and visual polish aligned rather than treating them as separate problems
